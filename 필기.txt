@@ -1,0 +1,73 @@
+
+새 프로젝트 
+
+- New > Spring Legacy Project > Spring MVC Project
+- Project name: "Code"
+- root package: "com.test.code"
+
+
+Code Project
+- 코드 조각 (Code Snippets) 게시판
+- 업무
+	- 목록보기(R)
+	- 상세보기(R)
+	- 쓰기(C)
+
+- Spring MVC 구축 + MyBatis 연동
+
+----------------------------------------------------------
+
+현재 프로젝트 버전 수정하기
+
+1. 자바 버전 > 11
+	- pom.xml
+	- 프로젝트 > 우측버튼 > Properties > Project facets
+	
+2. 스프링 버전 > 5.0.7
+	- pom.xml
+
+----------------------------------------------------------
+
+의존성 관리, pom.xml
+
+----------------------------------------------------------
+
+MyBatis 설정
+- root-context.xml > bean 4개
+	- log4j
+		- log4j.xml
+		- log4jdbc.log4j2.properties
+	- mybatis
+		- mappers
+		- config > mybatis-config.xml
+
+*** MyBatis 설정 완료 > 동작 확인? > 단위 테스트
+- src/test/main > "com.test.code.model" > "DBTests.java"
+
+----------------------------------------------------------
+
+파일
+
+- Code > "script.sql"
+- "com.test.code.controller" > "CodeController.java" //메인 컨트롤러
+- "com.test.code.model" > "CodeDAO.java"(I)
+                        > "CodeDAOImple.java"(C)
+                        > "CodeDTO.java"
+                        > "LanguageDTO.java"
+- views > "list.jsp"
+        > "view.jsp"
+        > "add.jsp"
+
+
+
+
+
+
+
+
+
+
+
+
+
+

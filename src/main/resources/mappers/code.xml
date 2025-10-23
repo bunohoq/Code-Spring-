@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="code">
+	
+	<select id="count" resultType="Integer">
+		select count(*) from tblAddress
+	</select>
+	
+	<select id="llist" resultType="ldto">
+		select * from tblLanguage
+	</select>
+	
+	<insert id="add" parameterType="cdto">
+		insert into tblCode (seq, subject, code, regdate, language)
+		values (seqCode.nextVal, #{subject}, #{code}, default, #{language})
+	</insert>
+	
+	<select id="list" resultType="cdto">
+		select * from tblCode
+			order by seq desc
+	</select>
+	
+	<select id="get" parameterType="String" resultType="cdto">
+		select * from tblCode
+			where seq = #{seq}
+	</select>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
