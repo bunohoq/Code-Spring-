@@ -27,6 +27,14 @@ create sequence seqCode;
 select * from tblCode;
 
 
+select
+    *
+from tblCode c
+    inner join tblLanguage l
+        on c.language = l.name
+			order by seq desc
+
+
 
 
 
